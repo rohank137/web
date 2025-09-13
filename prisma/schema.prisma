@@ -15,12 +15,10 @@ model User {
   password      String
   bio           String?    @default("I Like Mangazuna")
   emailVerified DateTime?
-  image         String?    @default("https://res.cloudinary.com/dyr5sva6n/image/upload/v1702635115/profile/profile_temmit.jpg")
+  image         String?    @default("https://res.cloudinary.com/demo/image/upload/default-profile.jpg")
   role          ROLE       @default(USER)
   createdAt     DateTime   @default(now())
   bookmarks     Bookmark[]
-
-  @@map("user")
 }
 
 model Bookmark {
@@ -32,9 +30,28 @@ model Bookmark {
   total_chapters Int
   userId         String?
   user           User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
 
-  @@index([userId])
-  @@map("bookmark")
+model Manga {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  image       String
+  type        String
+  status      String?
+  chapters    Chapter[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Chapter {
+  id        String   @id @default(cuid())
+  mangaId   String
+  manga     Manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade)
+  number    Int
+  title     String
+  images    Json
+  createdAt DateTime @default(now())
 }
 
 enum ROLE {

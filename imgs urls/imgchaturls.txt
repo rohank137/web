@@ -1,0 +1,72 @@
+naruto poster     : https://res.cloudinary.com/djnblmtaq/image/upload/v1757772821/narutro_c1_apymqv.jpg
+                    https://res.cloudinary.com/djnblmtaq/image/upload/v1757772816/narutro_c_niynxz.jpg
+
+one peice         : https://res.cloudinary.com/djnblmtaq/image/upload/v1757772822/one_peice_c2_ssb68o.jpg
+                    https://res.cloudinary.com/djnblmtaq/image/upload/v1757772821/one_peice_c1_p1mmrl.jpg
+                    https://res.cloudinary.com/djnblmtaq/image/upload/v1757772822/one_peice_c3_dic0ua.jpg
+
+Solo Leveling =   : https://res.cloudinary.com/djnblmtaq/image/upload/v1757772793/Solo_Leveling_c2_jxgw2j.jpg
+                    https://res.cloudinary.com/djnblmtaq/image/upload/v1757772793/Solo_Leveling_c1_nikysr.jpg
+
+Dragon Bal        : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770305/dragon_ball_c2_vq6ko6.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770305/dragon_ball_c1_t7zees.jpg",
+
+Attack on Titan   : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757766909/Attack_on_Titan_c2_xresmp.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757766908/Attack_on_Titan_c1_k07958.jpg",
+
+Tokyo Revengers   : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772798/Tokyo_Revengers_c2_jtbioi.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772794/Tokyo_Revengers_c1_fasgem.jpg",
+
+Bleach            : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767819/Bleach_c2_qgnar4.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767818/Bleach_c1_wc31sx.jpg",
+
+Black Clover      : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772800/Black_Clover_c1_fsy58w.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767560/Black_Clover_c2_wfgatv.jpg",
+
+Death Note        : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767838/Death_Note_c2_nc9xvv.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767838/Death_Note_c2_nc9xvv.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767820/Death_Note_c1_blkiqs.jpg",
+
+One Punch Man     : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772823/One_Punch_Man_c1_y4rhx9.jpg",
+
+Jujutsu Kaisen    : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772812/Jujutsu_Kaisen_c1_qklywi.jpg",
+
+Chainsaw Man Hindi: "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767819/Boruto_c1_oh6rez.jpg",
+
+Blue Lock         : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767819/Blue_Lock_c1_ahfgor.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767819/Blue_Lock_c2_rizdtt.jpg",
+
+Hunter x Hunter   : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772805/Hunter_x_Hunter_c2_pcuow5.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772805/Hunter_x_Hunter_c1_wpulmi.jpg",
+
+Fullmetal Alchemist : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770306/Fullmetal_Alchemist_c1_k4zmfu.jpg",
+
+Vagabond          : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772799/Vagabond_c1_ns4alj.jpg",
+
+Fairy Tail        : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770306/Fairy_Tail_c2_zo7jrt.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770305/Fairy_Tail_c1_tfgauj.jpg",
+
+Boruto            : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757767819/Boruto_c1_oh6rez.jpg",
+
+My Hero Academia  : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772815/My_Hero_Academia_c1_nv5gif.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772815/My_Hero_Academia_c2_sckou5.jpg",
+
+Fire Force        : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770306/Fire_Force_c1_wetfrr.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770306/Fairy_Tail_c2_zo7jrt.jpg",
+
+Berserk           : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757766909/Berserk_c1_dbs5u4.jpg",
+
+Haikyuu!!         : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772804/Haikyuu_c1_j6qbuk.jpg",
+
+JoJo's Bizarre Adventure: "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772807/JoJo_s_Bizarre_Adventure_c1_ullddq.jpg",
+
+Monster           : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772813/Monster_c1_bejhmg.jpg",
+
+Akame ga Kill     : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757766909/Akame_ga_Kill_c1_rajz15.jpg",
+
+Inuyasha          : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772806/Inuyasha_c1_qhxmux.jpg",
+
+Parasyte          : "https://res.cloudinary.com/djnblmtaq/image/upload/v1757772792/Parasyte_c1_ykqq1p.jpg",
+
+Demon Slayer Hindi: "https://res.cloudinary.com/djnblmtaq/image/upload/v1757770200/Demon_Slayer_Hindi_c2_umpu9b.jpg",
+                    "https://res.cloudinary.com/djnblmtaq/image/upload/v1757768520/Demon_Slayer_Hindi_c1_myavh3.jpg",
