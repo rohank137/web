@@ -3,8 +3,8 @@ import { MotionDiv } from "./motion/MotionDiv";
 import NavLink from "./navlink/NavLink";
 
 type DataFetch = {
-  manga_slug: string;
-  banner: string;
+  id: string;
+  image: string;
   rating: string;
   title: string;
   has_next: {
@@ -23,7 +23,7 @@ const AnotherCard = ({ data, index }: { data: DataFetch; index: number }) => {
     data.title.length > 10 ? data.title.substring(0, 15) + "..." : data.title;
   console.log(data);
   return (
-    <NavLink href={`${data?.manga_slug}`}>
+    <NavLink href={`/manga/${data?.id}`}>
       <MotionDiv
         className="item group"
         variants={variant}
@@ -38,7 +38,7 @@ const AnotherCard = ({ data, index }: { data: DataFetch; index: number }) => {
       >
         <div className="images rounded-md overflow-hidden  ">
           <Image
-            src={data?.banner}
+            src={data?.image}
             loading="lazy"
             alt={title}
             width={300}

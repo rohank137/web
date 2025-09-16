@@ -93,9 +93,9 @@ const Chapter = ({ dataRead, id }: { dataRead: chapterType; id: string }) => {
       <div className="mb-20 w-full sm:w-[60%] m-auto">
         <div className="flex justify-center">
           <div className="read grid justify-center mt-5  ">
-            {dataRead?.data?.map((item: any, i: number) => (
+            {dataRead?.data?.images?.map((img: string, i: number) => (
               <Image
-                src={item?.chapter_image}
+                src={img}
                 alt=""
                 referrerPolicy="no-referrer"
                 width={500}

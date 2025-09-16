@@ -16,8 +16,8 @@ const Details = async ({
   id: string;
 }) => {
   const session = await getServerSession();
-  const images = dataDetails?.data?.banner
-    ? dataDetails?.data?.banner.replace(/\?.*$/, "")
+  const images = dataDetails?.data?.image
+    ? dataDetails?.data?.image.replace(/\?.*$/, "")
     : "";
   const title = dataDetails?.data?.title;
   return (
@@ -44,7 +44,7 @@ const Details = async ({
         <div className="relative">
           <Image
             className="banner h-[40vh] object-cover w-full bg-no-repeat bg-cover bg-center bg-blend-darken brightness-75"
-            src={dataDetails?.data?.banner}
+            src={dataDetails?.data?.image}
             alt={"test"}
             referrerPolicy="no-referrer"
             width={150}
@@ -115,7 +115,7 @@ const Details = async ({
                 href={`/read${
                   dataDetails?.data?.chapter_list?.[
                     dataDetails?.data?.chapter_list.length - 1
-                  ]?.chapter_slug
+                  ]?.chapter_id
                 }`}
               >
                 <div className="continue  bg-white py-2 px-3 rounded-full flex ">
@@ -196,11 +196,11 @@ const Details = async ({
                   item: {
                     chapter_title: string;
                     chapter_release: string;
-                    chapter_slug: string;
+                    chapter_id: string;
                   },
                   i: number
                 ) => (
-                  <NavLink href={`/read${item.chapter_slug}`} key={i}>
+                  <NavLink href={`/read${item.chapter_id}`} key={i}>
                     <li className="flex justify-between px-5 py-3 font-karla text-lg bg-[#141519] text-white cursor-pointer hover:bg-[#17191d] visited:text-yellow-700">
                       <div className="flex gap-4">
                         <span>{item.chapter_title}</span>

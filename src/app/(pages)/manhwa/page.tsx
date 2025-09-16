@@ -5,8 +5,8 @@ import Loadmore from "@/components/Loadmore";
 import Navbar from "@/components/Navbar";
 import siteMetadata from "@/lib/seo/siteMetadata";
 type DataFetch = {
-  manga_slug: string;
-  banner: string;
+  id: string;
+  image: string;
   rating: string;
   title: string;
   has_next: {

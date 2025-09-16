@@ -1,34 +1,27 @@
-import { NextRequest, NextResponse } from "next/server";
-import {
-  NEXT_MANGAZUNA_APIURL,
-  NEXT_MANGAZUNA_APIKEY,
-} from "../../../../lib/mangazuna";
-import axios from "axios";
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prismadb";
 
-export async function GET(req: NextRequest, res: NextResponse) {
-  try {
-    if (!NEXT_MANGAZUNA_APIURL && !NEXT_MANGAZUNA_APIKEY) {
-      throw new Error("Missing API Key Or API URL");
-    }
-    const page = req.nextUrl.searchParams.get("page") || 1;
-    const type = req.nextUrl.searchParams.get("type") || "Manga";
-    const title = req.nextUrl.searchParams.get("title") || "";
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const type = searchParams.get("type") || "manga";
+  const page = parseInt(searchParams.get("page") || "1");
 
-    const fetchData = await axios.get(
-      `${process.env.NEXT_MANGAZUNA_APIURL}/api/v1/manga/advsearch`,
-      {
-        params: {
-          page: page,
-          type: type,
-          title: title,
-        },
-      }
-    );
-    const data = await fetchData.data;
-    return Response.json(data);
-  } catch (err) {
-    return Response.json(err, {
-      status: 500,
-    });
-  }
+  const mangas = await prisma.manga.findMany({
+    where: { type },
+    skip: (page - 1) * 20,
+    take: 20,
+  });
+
+  // ✅ Transform to old API shape
+  const transformed = mangas.map((m) => ({
+    id: m.id,
+    image: m.image,
+    rating: "N/A",            // DB me rating nahi hai → dummy
+    title: m.title,
+    has_next: { has_next_link: null, is_next_link: false },
+    has_prev: { has_prev_link: null, is_prev_link: false },
+    total_manga: 30,
+  }));
+
+  return NextResponse.json({ data: transformed, status: "success" });
 }

@@ -2,7 +2,7 @@ export type detailsDataProps = {
   status: string;
   data: {
     title: string;
-    banner: string;
+    image: string;
     type: string;
     status: string;
     rating: string;
@@ -12,12 +12,10 @@ export type detailsDataProps = {
     author: string;
     total_chapter: string;
     bookmark_users: string;
-    chapter_list: [
-      {
-        chapter_title: string;
-        chapter_slug: string;
-        chapter_release: string;
-      }
-    ];
+    chapter_list: {
+      chapter_title: string;
+      chapter_id: string;
+      chapter_release: string;
+    }[];
   };
 };

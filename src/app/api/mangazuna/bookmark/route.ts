@@ -7,14 +7,14 @@ export async function POST(req: NextRequest, res: NextResponse) {
     if (!session) {
       throw new Error("You need to Sign in");
     }
-    const { title, image, url, rating, total_chapters, userId } =
+    const { id,title, image, url, rating, total_chapters, userId } =
       await req.json();
     if (!title || !image || !url || !rating || !total_chapters || !userId) {
       throw new Error("Field must have value");
     }
     const findBookmarkIfExits = await prisma.user.findFirst({
       where: {
-        bookmarks: {
+        bookmark: {
           some: {
             title,
             userId,
@@ -27,6 +27,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
     const bookmark = await prisma.bookmark.create({
       data: {
+        id,
         title,
         image,
         rating,

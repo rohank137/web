@@ -1,19 +1,29 @@
-import { NextRequest } from "next/server";
-import { NEXT_MANGAZUNA_APIURL, NEXT_MANGAZUNA_APIKEY } from "@/lib/mangazuna";
-export async function GET(req: NextRequest, { params }: any) {
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prismadb";
+
+export async function GET(req: Request, { params }: { params: { id: string } }) {
   try {
-    if (!NEXT_MANGAZUNA_APIURL && !NEXT_MANGAZUNA_APIKEY) {
-      throw new Error("Missing API Key Or API URL");
-    }
     const { id } = params;
-    const fetchData = await fetch(
-      `${NEXT_MANGAZUNA_APIURL}/api/v1/komik/chapter/${id}?apiKey=${NEXT_MANGAZUNA_APIKEY}`
-    );
-    const data = await fetchData.json();
-    return Response.json(data);
-  } catch (err) {
-    return Response.json(err, {
-      status: 500,
+    const chapter = await prisma.chapter.findUnique({
+      where: { id },
+      select: { id: true, mangaId: true, number: true, title: true, images: true, createdAt: true },
     });
+
+    if (!chapter) {
+      return NextResponse.json({ status: "error", message: "Not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({
+      status: "success",
+      data: {
+        chapter_title: chapter.title,
+        chapter_id: chapter.id,
+        chapter_release: chapter.createdAt?.toISOString() || "",
+        images: chapter.images,
+      },
+    });
+  } catch (err) {
+    console.error("API /mangazuna/read error:", err);
+    return NextResponse.json({ status: "error", message: "Server error" }, { status: 500 });
   }
 }

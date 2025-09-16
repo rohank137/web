@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
   engineType = "binary"
 }
 
@@ -8,53 +8,57 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id            String     @id @default(cuid())
-  username      String
-  email         String     @unique
-  password      String
-  bio           String?    @default("I Like Mangazuna")
-  emailVerified DateTime?
-  image         String?    @default("https://res.cloudinary.com/demo/image/upload/default-profile.jpg")
-  role          ROLE       @default(USER)
-  createdAt     DateTime   @default(now())
-  bookmarks     Bookmark[]
-}
-
-model Bookmark {
-  id             String  @id @default(cuid())
+model bookmark {
+  id             String  @id
   title          String
   image          String
   url            String
   rating         String
   total_chapters Int
   userId         String?
-  user           User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user           user?   @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Bookmark_userId_fkey")
+
+  @@index([userId])
 }
 
-model Manga {
+model chapter {
+  id        String   @id @default(cuid())
+  mangaId   String
+  number    Int
+  title     String
+  images    Json
+  createdAt DateTime @default(now())
+  manga     manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade, map: "Chapter_mangaId_fkey")
+
+  @@index([mangaId], map: "Chapter_mangaId_fkey")
+}
+
+model manga {
   id          String    @id @default(cuid())
   title       String
   description String
   image       String
   type        String
   status      String?
-  chapters    Chapter[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  chapters    chapter[]
 }
 
-model Chapter {
-  id        String   @id @default(cuid())
-  mangaId   String
-  manga     Manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade)
-  number    Int
-  title     String
-  images    Json
-  createdAt DateTime @default(now())
+model user {
+  id            String     @id
+  username      String
+  email         String     @unique(map: "User_email_key")
+  password      String
+  bio           String?    @default("I Like Mangazuna")
+  emailVerified DateTime?
+  image         String?    @default("https://res.cloudinary.com/demo/image/upload/default-profile.jpg")
+  role          user_role  @default(USER)
+  createdAt     DateTime   @default(now())
+  bookmark      bookmark[]
 }
 
-enum ROLE {
+enum user_role {
   ADMIN
   USER
 }

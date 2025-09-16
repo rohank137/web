@@ -7,8 +7,8 @@ import { MotionDiv } from "@/components/motion/MotionDiv";
 import siteMetadata from "@/lib/seo/siteMetadata";
 type DataFetch = {
   title: string;
-  banner: string;
-  manga_slug: string;
+  image: string;
+  id: string;
   rating: string;
 };
 
@@ -83,7 +83,7 @@ const page = async ({ searchParams }: { searchParams: any }) => {
             className={`contentSearch grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-5 mt-10`}
           >
             {getData?.data?.map((item: DataFetch, i: number) => (
-              <Link href={`${item?.manga_slug}`} key={i}>
+              <Link href={`${item?.id}`} key={i}>
                 <MotionDiv
                   className="item group"
                   variants={variant}
@@ -99,7 +99,7 @@ const page = async ({ searchParams }: { searchParams: any }) => {
                   <div className="images rounded-md overflow-hidden  ">
                     <Image
                       src={
-                        item?.banner ? item?.banner?.replace(/\?.*$/, "") : ""
+                        item?.image ? item?.image?.replace(/\?.*$/, "") : ""
                       }
                       loading="lazy"
                       alt={item?.title}

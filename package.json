@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "seed": "ts-node prisma/seed.ts",
     "build": "npx prisma migrate deploy && npx prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
@@ -12,9 +13,10 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@material-tailwind/react": "^2.1.5",
-    "@prisma/client": "^6.15.0",
+    "@prisma/client": "^6.16.1",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
+    "cloudinary": "^2.7.0",
     "disqus-react": "^1.1.5",
     "framer-motion": "^10.16.16",
     "ioredis": "^5.3.2",
@@ -23,7 +25,7 @@
     "next-auth": "^4.24.5",
     "next-pwa": "^5.6.0",
     "nprogress": "^0.2.0",
-    "prisma": "^6.15.0",
+    "prisma": "^6.16.1",
     "qrcode.react": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
@@ -38,7 +40,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^20",
+    "@types/node": "^20.19.14",
     "@types/nprogress": "^0.2.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -47,7 +49,8 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "description": "<div align=\"center\"> <a href=\"https://kyouka-live.web.app/\">   <img src=\"https://i.ibb.co/G3TPb76/mangazuna.png\" alt=\"logo\" width=\"180\"/> </a> </div>",
   "main": "next.config.js",
